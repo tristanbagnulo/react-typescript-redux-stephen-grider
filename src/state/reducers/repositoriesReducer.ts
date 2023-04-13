@@ -1,7 +1,7 @@
 // Term: Reducer
 // Tutorial Reference: Started on Video 28. Reducer Setup
-// Definition: Takes an 'action' and the previous 'state'
-// of the application and returns a new 'state'.
+// Definition: Reducers are functions that take in a curren 'State" and an 'Action' and 
+// returns a new 'State' based on the action that was dispatched.
 
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
@@ -14,8 +14,14 @@ interface RepositoriesState {
     data: string[];
 }
 
+const initialState = {
+    loading: false,
+    error: null,
+    data: []
+}
+
 const reducer = (
-    state: RepositoriesState, 
+    state: RepositoriesState = initialState, 
     action: Action /*Specifies action types for input Video 30 - Typing an Action*/
 ): RepositoriesState /*Specifies return type - Video 29. Annotating the Return Type*/ => { 
     switch (action.type) {

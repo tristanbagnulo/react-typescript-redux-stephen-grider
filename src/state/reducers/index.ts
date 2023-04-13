@@ -29,3 +29,8 @@ const reducers = combineReducers({
 });
 
 export default reducers;
+
+// `ReturnType<typeof function>` is a helper in TypeScript that
+// returns us the type of the function. Ultimately, we are exporting
+// the type from the reducer function.
+export type RootState = ReturnType<typeof reducers>;

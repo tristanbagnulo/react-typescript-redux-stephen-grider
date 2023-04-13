@@ -13,7 +13,7 @@ import { Dispatch } from 'react';
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
 
-export const searchReporitories = (term: string) => {
+export const searchRepositories = (term: string) => {
     //`dispatch` below is how we manually dispatch actions
     //into the redux store and get those processes by a reducer. 
     return async (dispatch: Dispatch<Action>) => {
@@ -24,13 +24,13 @@ export const searchReporitories = (term: string) => {
         });
 
         try {
-            const { data } = await axios.get('https://api.npms.io/v2/search?q=', {
+            const { data } = await axios.get('https://api.npms.io/v2/search', {
                 params: {
-                    text: term
+                    q: term
                 }
             });
 
-            const names = data.objects.map((result: any) => {
+            const names = data.results.map((result: any) => {
                 return result.package.name;
             });
 

@@ -1,6 +1,6 @@
 //Term: Action Creator
 //Tutorial Reference: Started at Video 36 - Adding Action Creators
-//Definition: Returns an "Action" object. An "Action" is a plan JavaScript 
+//Definition: Returns an "Action" object. An "Action" is a plain JavaScript 
 //object that describes the change that should be made to the
 //application state. The "Action Creator" helps create "Actions" in a
 //standardized structure and format. This improves code maintainability
